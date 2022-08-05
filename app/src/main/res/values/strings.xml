@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculadore Prompinas</string>
+    <string name="tip_amount">Tip Amount</string>
+    <string name="costo_del_servicio">Costo del servicio</string>
+    <string name="como_estuvo_el_servicio">Como estuvo el servicio?</string>
+    <string name="calculate">Calculate</string>
+</resources>
