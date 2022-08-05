@@ -15,33 +15,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-       val costOfService = binding.costOfService.text.toString().toDoubleOrNull()
+
 
         binding.calculateButton.setOnClickListener {
+            val costOfService = binding.costOfService.text.toString().toDoubleOrNull()
 
             if (costOfService != null) {
                 calculateTipAmount(costOfService)
-            }
-            else "Sin Nada"
+            } else println("Sin Nada")
         }
-
-
 
     }
 
-    private fun calculateTipAmount(costOfService:Double) {
-        if (binding.optionTwentyPercent.isActivated) {
-            finalResult = (costOfService * 0.2)
-        } else if (binding.optionEighteenPercent.isActivated) {
-            finalResult = (costOfService * 0.18)
-        } else {
-            finalResult = (costOfService * 0.15)
+    private fun calculateTipAmount(costOfService: Double) {
+        when (binding.tipOptions.checkedRadioButtonId) {
+            R.id.option_twenty_percent -> finalResult = (costOfService * 0.2)
+            R.id.option_eighteen_percent -> finalResult = (costOfService * 0.18)
+            else -> finalResult = (costOfService * 0.15)
         }
         binding.tipResult.text = finalResult.toString()
     }
 
-
 }
-
-
-
